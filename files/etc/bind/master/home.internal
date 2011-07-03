@@ -5,10 +5,10 @@ $TTL    8640
 	1440      ; Retry
 	3600    ; Expire
 	8640 )    ; Minimum
-
-IN	A	172.30.42.33
-IN	NS      gw.
-IN	MX      30 gw.
+$ORIGIN home.lan.
+	IN	A	172.30.42.33
+	IN	NS      gw
+	IN	MX      30 gw
 
 gw	IN	A 172.30.42.33
 
