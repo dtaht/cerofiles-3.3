@@ -5,13 +5,13 @@ config interface loopback
 	option netmask	255.0.0.0
 
 config interface se00
-	option ifname	eth0
+	option ifname	se00
 	option proto	static
 	option ipaddr	172.30.42.33
 	option netmask	255.255.255.224
 
 config interface ge00
-	option ifname	eth1
+	option ifname	ge00
 	option proto	dhcp
 
 config interface sw00
