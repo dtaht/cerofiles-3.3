@@ -1,14 +1,15 @@
 
-config 'interface' 'wan'
+config 'interface' 'ge00'
 	option 'classgroup' 'Default'
 	option 'overhead' '0'
 	option 'download' '16000'
 	option 'upload' '4400'
 	option 'enabled' '1'
-
+	
 config 'classify'
 	option 'target' 'Priority'
-	option 'ports' '22,53,222,5060'
+	option 'proto' 'tcp'
+	option 'ports' '22,222,53'
 
 config 'classify'
 	option 'target' 'Normal'
@@ -17,7 +18,8 @@ config 'classify'
 
 config 'classify'
 	option 'target' 'Express'
-	option 'ports' '53,123,5190'
+	option 'proto' 'udp'
+	option 'ports' '53,123,5060,5190'
 
 config 'classify'
 	option 'target' 'Bulk'
