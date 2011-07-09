@@ -37,6 +37,10 @@ config interface ge00
 	option 'wired' 'true'
 config interface se00
 	option 'wired' 'true'
+config interface sw00
+	option 'wired' 'false'
+config interface sw10
+	option 'wired' 'false'
 config interface gw00
 	option 'wired' 'false'
 config interface gw01
