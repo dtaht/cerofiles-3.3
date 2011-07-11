@@ -63,6 +63,9 @@ echo 'updating feeds'
 ./scripts/feeds update 
 ./scripts/feeds install `cat env/packages.list`
 cp .config config.orig
+mkdir -p ~/public_html/cerowrt
+[ -h ~/public_html/cerowrt/cerowrt-wndr3700v2 ] && ln -s ~/src/cerowrt/bin/ar71xx ~/public_html/cerowrt/cerowrt-wndr3700v2
+
 make defconfig
 TC1=/tmp/dconfig.$$
 cat .config | egrep '=y|=m' | sort -u > ${TC1}.new
@@ -74,9 +77,6 @@ cmp ${TC1}.new ${TC1}.old
 	      }
 
 rm -f ${TC1}.new ${TC1}.old
-
-mkdir -p ~/public_html/cerowrt
-[ -h ~/public_html/cerowrt/cerowrt-wndr3700v2 ] && ln -s ~/src/cerowrt/bin/ar71xx ~/public_html/cerowrt/cerowrt-wndr3700v2
 
 }
 
