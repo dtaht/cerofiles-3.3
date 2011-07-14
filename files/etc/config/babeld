@@ -62,7 +62,7 @@ config filter
 	option 'type' 'redistribute'
 	# Selectors: ip, eq, le, ge, neigh, id, proto, local, if
 	option 'le' '27'
-	option 'proto' '3'
+	option 'proto' '0'
 	# Action 
 	# option 'action' 'metric 1280'
 
