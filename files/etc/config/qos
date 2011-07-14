@@ -4,7 +4,7 @@ config 'interface' 'ge00'
 	option 'overhead' '0'
 	option 'download' '16000'
 	option 'upload' '4400'
-	option 'enabled' '1'
+	option 'enabled' '0'
 	
 config 'classify'
 	option 'target' 'Priority'
