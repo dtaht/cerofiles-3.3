@@ -9,7 +9,7 @@ config 'polipo' 'general'
 	option 'enabled' '1'
 	# adress on which polipo will listen, 0.0.0.0 means all addresses
 	option 'proxyAddress' '::'
-        option 'dnsUseGethostbyname' 'false'
+        option 'dnsUseGethostbyname' 'true'
 	option 'dnsNameServer' '127.0.0.1'
 	# you can optionally bind to ipv6, but not to ::1 for some reason
 	#option 'dnsNameServer' '2002:62ee:6edc:3:21f:3bff:fe24:dff5'
