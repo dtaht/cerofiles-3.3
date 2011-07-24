@@ -135,3 +135,5 @@ iwinfo
 luci
 freifunk-policyrouting
 meshwizard
+uftp
+nuttcp
