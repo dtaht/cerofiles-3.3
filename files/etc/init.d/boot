@@ -67,6 +67,9 @@ start() {
 	[ "$FAILSAFE" = "true" ] && touch /tmp/.failsafe
 
 	killall -q hotplug2
+	# Debloat driver
+	ethtool -G eth0 tx 4
+	ethtool -G eth1 tx 4
 	# Change device names
 	/sbin/fixeth
 	[ -x /sbin/hotplug2 ] && /sbin/hotplug2 --override --persistent \
