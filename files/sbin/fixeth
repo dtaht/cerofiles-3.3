@@ -1,0 +1,22 @@
+#!/bin/sh
+
+fixeth() {
+
+SYSNET=/sys/class/net
+
+[ ! -s /etc/mactab ] && { 
+	[ -e $SYSNET/eth0 ] && {
+		address=`cat $SYSNET/eth0/address` 
+		echo se00 $address > /etc/mactab
+		address=`cat $SYSNET/eth1/address` 
+		echo ge00 $address >> /etc/mactab
+	}
+}
+ifconfig eth0 down > /dev/null
+ifconfig eth1 down > /dev/null
+nameif
+#ifconfig se00 up > /dev/null
+#ifconfig ge00 up > /dev/null
+}
+
+fixeth
