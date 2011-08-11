@@ -9,14 +9,14 @@ config 'polipo' 'general'
 	option 'enabled' '1'
 	# adress on which polipo will listen, 0.0.0.0 means all addresses
 	option 'proxyAddress' '::'
-        option 'dnsUseGethostbyname' 'true'
-	option 'dnsNameServer' '127.0.0.1'
+        option 'dnsUseGethostbyname' 'reluctantly'
+	# option 'dnsNameServer' '127.0.0.1'
 	# you can optionally bind to ipv6, but not to ::1 for some reason
 	#option 'dnsNameServer' '2002:62ee:6edc:3:21f:3bff:fe24:dff5'
 	# port on which polipo will listen, default is 8123
 	#option 'proxyPort' '8123'
 	# list of allowed clients to connect
-	list 'allowedClients' '172.30.42.0/24'
+	list 'allowedClients' '172.16.0.0/12'
 	# Note, if using IPv6, you must also allow that
 	# list 'allowedClients' '2002:YOUR:ADDR/48'
 	#list 'allowedClients' '127.0.0.1'
