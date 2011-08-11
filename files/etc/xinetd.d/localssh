@@ -1,0 +1,17 @@
+# This is an example of redirecting an ipv4 stream to ipv6
+# via ssh. Xinetd is not smart enough to do dns lookups on the fly
+# so if there is no dns name on start, or it changes...
+
+service localssh2
+{
+	disable         = yes
+	socket_type     = stream
+	port		= 222
+	wait            = no
+	redirect 	= 2001::db8:0:1 22
+        type            = UNLISTED
+	user            = nobody
+	log_on_failure  += USERID
+	flags		= IPV6
+}
+
