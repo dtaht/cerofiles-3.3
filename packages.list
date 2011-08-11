@@ -125,7 +125,6 @@ time
 bismark-active
 bismark-mgmt
 cerowrt-chrome
-babelz
 bind-latest-server
 debloat
 freifunk-firewall
@@ -137,3 +136,13 @@ freifunk-policyrouting
 meshwizard
 uftp
 nuttcp
+in-dhcp
+inetdxtra
+estats
+dnsval
+babeld
+quagga
+freeswitch
+nuttcp
+httping
+uftpd
