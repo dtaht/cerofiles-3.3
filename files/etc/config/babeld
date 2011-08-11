@@ -33,8 +33,10 @@ config general
 # If you use an alias, it must be already defined when babeld starts.
 # Otherwise, the name is taken literally and the interface can be
 # brought up later (useful for tunnels for instance).
-config interface ge00
-	option 'wired' 'true'
+
+# uncomment this if this interface is not natted
+#config interface ge00
+#	option 'wired' 'true'
 config interface se00
 	option 'wired' 'true'
 config interface sw00
@@ -49,7 +51,7 @@ config interface gw10
 	option 'wired' 'false'
 config interface gw11
 	option 'wired' 'false'
-	option 'rxcost' '255'
+	option 'rxcost' '254'
 # Mildly prefer  5 ghz
 # A filter consists in a type ('in', 'out' or 'redistribute'), an action
 # ('allow', 'deny' or 'metric xxx') and a set of selectors ('ip', 'eq',
