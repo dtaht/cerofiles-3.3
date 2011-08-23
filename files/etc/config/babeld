@@ -13,7 +13,7 @@ config general
 	# Do not use this option unless you know what you are doing, as it can
 	# cause persistent route flapping.
 	## option 'duplication_priority' '0'
-	option 'carrier_sense 'true'
+	option 'carrier_sense' 'true'
 	# option 'assume_wireless' 'false'
 	# option 'no_split_horizon' 'false'
 	# option 'parasitic' 'false'
