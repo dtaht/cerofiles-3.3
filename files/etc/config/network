@@ -100,6 +100,6 @@ config 'interface' 'gw11'
 
 config 'interface' 'ge01' 
         option 'proto' '6to4' 
-        option 'adv_interface' 'se00 gw00 gw10'
+        option 'adv_interface' 'se00 sw00 sw10 gw00 gw10'
         option 'adv_subnet' '1'
 	option 'wan_device' 'ge00'
