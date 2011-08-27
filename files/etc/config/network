@@ -91,7 +91,7 @@ config 'interface' 'gw10'
 	option 'netmask' '255.255.255.224'
 
 config 'interface' 'gw01'
-	option 'proto' 'none'
+	option 'proto' 'ahcp'
 	option txqueuelen '4'
 
 config 'interface' 'gw11'
