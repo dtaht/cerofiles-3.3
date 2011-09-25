@@ -16,8 +16,17 @@ mac80211_hostapd_setup_base() {
 	config_get beacon_int "$device" beacon_int
 	config_get basic_rate_list "$device" basic_rate
 	config_get_bool noscan "$device" noscan
+
+	hostapd_set_log_options base_cfg "$device"
+
 	[ -n "$channel" -a -z "$hwmode" ] && wifi_fixup_hwmode "$device"
-	[ "$channel" = auto ] && channel=
+
+	[ "$channel" = auto ] && {
+		channel=$(iw phy "$phy" info | \
+			sed -ne '/MHz/ { /disabled\|passive\|radar/d; s/.*\[//; s/\].*//; p; q }')
+		config_set "$device" channel "$channel"
+	}
+
 	[ -n "$hwmode" ] && {
 		config_get hwmode_11n "$device" hwmode_11n
 		[ -n "$hwmode_11n" ] && {
@@ -197,10 +206,13 @@ find_mac80211_phy() {
 
 scan_mac80211() {
 	local device="$1"
-	local adhoc sta ap monitor mesh
+	local adhoc sta ap monitor mesh disabled
 
 	config_get vifs "$device" vifs
 	for vif in $vifs; do
+		config_get_bool disabled "$vif" disabled 0
+		[ $disabled = 0 ] || continue
+
 		config_get mode "$vif" mode
 		case "$mode" in
 			adhoc|sta|ap|monitor|mesh)
@@ -273,6 +285,9 @@ enable_mac80211() {
 	local apidx=0
 	fixed=""
 	local hostapd_ctrl=""
+
+	config_get ath9k_chanbw "$device" ath9k_chanbw
+	[ -n "$ath9k_chanbw" -a -d /sys/kernel/debug/ieee80211/$phy/ath9k ] && echo "$ath9k_chanbw" > /sys/kernel/debug/ieee80211/$phy/ath9k/chanbw
 
 	[ -n "$country" ] && iw reg set "$country"
 	[ "$channel" = "auto" -o "$channel" = "0" ] || {
@@ -498,7 +513,7 @@ check_mac80211_device() {
 }
 
 detect_mac80211() {
-	smartssid=""
+        smartssid=""
 	devidx=0
 	config_load wireless
 	while :; do
@@ -521,7 +536,14 @@ detect_mac80211() {
 		ht_capab="";
 		[ "$ht_cap" -gt 0 ] && {
 			mode_11n="n"
-			append ht_capab "	option htmode	HT20" "$N"
+
+		iw phy "$dev" info | grep -q '2412 MHz' || {
+  		    append ht_capab "	option htmode	HT40+" "$N"
+		}
+		iw phy "$dev" info | grep -q '5200 MHz' || {
+  		    append ht_capab "	option htmode	HT20" "$N"
+		}			
+
 
 			list="	list ht_capab"
 			[ "$(($ht_cap & 1))" -eq 1 ] && append ht_capab "$list	LDPC" "$N"
@@ -535,7 +557,8 @@ detect_mac80211() {
 			[ "$(($ht_cap & 4096))" -eq 4096 ] && append ht_capab "$list	DSSS_CCK-40" "$N"
 		}
 		smartssid=""
-		iw phy "$dev" info | grep -q '2412 MHz' || { mode_band="a"; channel="40"; smartssid=5; }	
+		iw phy "$dev" info | grep -q '2412 MHz' || { mode_band="a"; channel="40"; smartssid=5; }
+
 		cat <<EOF
 config wifi-device  radio$devidx
 	option type     mac80211
