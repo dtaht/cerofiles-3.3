@@ -1,28 +1,30 @@
 config interface loopback
-	option ifname	lo
-	option proto	static
-	option ipaddr	127.0.0.1
-	option netmask	255.0.0.0
+	option 'ifname'	'lo'
+	option 'proto'	'static'
+	option 'ipaddr'	'127.0.0.1'
+	option 'netmask'	'255.0.0.0'
 
 config interface se00
-	option ifname	se00
-	option proto	static
-	option ipaddr	172.30.42.33
-	option netmask	255.255.255.224
+	option 'ifname'	'se00'
+	option 'proto'	'static'
+	option 'ipaddr'	'172.30.42.1'
+	option 'netmask'	'255.255.255.224'
 
 config interface ge00
-	option ifname	ge00
-	option proto	dhcp
+	option 'ifname'	'ge00'
+	option 'proto'	'dhcp'
 
 config interface sw00
-	option proto	static
-	option ipaddr	172.30.42.65
-	option netmask	255.255.255.224
+	option 'type' 'none'
+	option 'proto'	'static'
+	option 'ipaddr' '172.30.42.65'
+	option 'netmask'	'255.255.255.224'
 
 config interface sw10
-	option proto	static
-	option ipaddr	172.30.42.97
-	option netmask	255.255.255.224
+	option 'type' 'none'
+	option 'proto'	'static'
+	option 'ipaddr'	'172.30.42.97'
+	option 'netmask' '255.255.255.224'
 
 config switch
 	option name	rtl8366s
@@ -91,15 +93,15 @@ config 'interface' 'gw10'
 	option 'netmask' '255.255.255.224'
 
 config 'interface' 'gw01'
-	option 'proto' 'none'
-	option txqueuelen '4'
+	option 'proto' 'ahcp'
+	option txqueuelen '37'
 
 config 'interface' 'gw11'
 	option 'proto' 'ahcp'
-	option 'txqueuelen' '4'
+	option 'txqueuelen' '37'
 
 config 'interface' 'ge01' 
         option 'proto' '6to4' 
-        option 'adv_interface' 'se00 gw00 gw10'
+        option 'adv_interface' 'se00 sw00 sw10 gw00 gw10'
         option 'adv_subnet' '1'
 	option 'wan_device' 'ge00'
