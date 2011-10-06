@@ -31,6 +31,12 @@ echo 'Establishing base repositories'
 clones $CERO_ROREPOS
 clones $CERO_RWREPOS
 
+# Bootstrapping cerofiles again if not already in this dir
+
+[ ! -e cerofiles ] && { 
+     git clone git://github.com/dtaht/cerofiles.git;
+}
+
 # Save disk, spin up cerowrt dir referencing openwrt
 
 git clone --reference openwrt $CERO_MAIN cerowrt

@@ -9,7 +9,8 @@ CERO_DIR=$HOME/src
 
 CERO_ROREPOS="git://nbd.name/luci.git git://nbd.name/packages.git git://nbd.name/openwrt.git git://github.com/dtaht/Ceropatches.git git://github.com/yiannisy/openflow-openwrt-bismark.git"
 CERO_RWREPOS="git://github.com/bismark-devel/bismark-packages.git git://github.com/dtaht/ceropackages.git "
-CERO_MAIN=git://github.com/dtaht/cerowrt.git
+CERO_MAIN=git://github.com/dtaht/Cerowrt.git
 CERO_TARGET=wndr3700v2
 
 export CERO_DIR CERO_ROREPOS CERO_RWREPOS CERO_MAIN CERO_TARGET
+
