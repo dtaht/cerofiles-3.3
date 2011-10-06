@@ -1,0 +1,15 @@
+# Edit and Copy this file to your ~/.cero file
+
+CERO_DIR=$HOME/src
+
+# Actually these are all read-only at present. 
+# If you wish read/write privs to the the ceropackages repo, ask. 
+# Ceropackages is a fast way to spin up new packages before 
+# submitting to openwrt's main repos.
+
+CERO_ROREPOS="git://nbd.name/luci.git git://nbd.name/packages.git git://nbd.name/openwrt.git git://github.com/dtaht/Ceropatches.git git://github.com/yiannisy/openflow-openwrt-bismark.git"
+CERO_RWREPOS="git://github.com/bismark-devel/bismark-packages.git git://github.com/dtaht/ceropackages.git "
+CERO_MAIN=git://github.com/dtaht/cerowrt.git
+CERO_TARGET=wndr3700v2
+
+export CERO_DIR CERO_ROREPOS CERO_RWREPOS CERO_MAIN CERO_TARGET
