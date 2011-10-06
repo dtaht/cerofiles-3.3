@@ -53,13 +53,13 @@ yes | ./scripts/env new dbg
 cd env
 git remote add ceromain $CERO_DIR/cerofiles
 git pull ceromain master
-cd $CERO_DIR/$CERO_TARGET/files # symbolic link, must go direct
-[ ! -e ../env/dirs.list ] && { 
+cd $CERO_DIR/$CERO_TARGET/env/files
+[ ! -e ../dirs.list ] && { 
 	echo "Agh! you don't have a dirs.list. Your checkout failed." 
 	exit -1
 	}
-mkdir -p `cat $CERO_DIR/env/dirs.list`
-cd ..
+mkdir -p `cat ../dirs.list`
+cd ../..
 cat env/feeds.conf | sed s#/home/cero1/src#$CERO_DIR# > feeds.conf
 echo 'updating feeds'
 ./scripts/feeds update 
@@ -94,7 +94,7 @@ rm -f ${TC1}.new ${TC1}.old
 
 clean() {
 cd $CERO_DIR
-rm -rf luci packages openwrt ceropackages bismark-packages cerofiles public_html/cerowrt cerowrt
+rm -rf luci packages openwrt ceropackages bismark-packages cerofiles public_html/cerowrt cerowrt Ceropatches openflow-openwrt-bismark
 cd ~
 }
 
