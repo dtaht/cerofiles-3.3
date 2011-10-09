@@ -563,7 +563,7 @@ detect_mac80211() {
 			[ "$(($ht_cap & 4096))" -eq 4096 ] && append ht_capab "$list	DSSS_CCK-40" "$N"
 		}
 		smartssid=""
-		iw phy "$dev" info | grep -q '2412 MHz' || { mode_band="a"; channel="40"; smartssid=5; }
+		iw phy "$dev" info | grep -q '2412 MHz' || { mode_band="a"; channel="36"; smartssid=5; }
 
 		cat <<EOF
 config wifi-device  radio$devidx
