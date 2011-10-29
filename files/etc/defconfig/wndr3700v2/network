@@ -94,11 +94,11 @@ config 'interface' 'gw10'
 
 config 'interface' 'gw01'
 	option 'proto' 'ahcp'
-	option txqueuelen '37'
+	option txqueuelen '40'
 
 config 'interface' 'gw11'
 	option 'proto' 'ahcp'
-	option 'txqueuelen' '37'
+	option 'txqueuelen' '40'
 
 config 'interface' 'ge01' 
         option 'proto' '6to4' 
