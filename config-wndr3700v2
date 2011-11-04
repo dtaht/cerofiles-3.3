@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# OpenWrt version: Attitude Adjustment (r28669)
-# Sat Oct 29 11:28:39 2011
+# OpenWrt version: Attitude Adjustment (r28753)
+# Fri Nov  4 08:41:31 2011
 #
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_ppc40x is not set
@@ -396,6 +396,7 @@ CONFIG_KERNEL_KALLSYMS=y
 # CONFIG_KERNEL_DEBUG_INFO is not set
 CONFIG_KERNEL_AIO=y
 # CONFIG_KERNEL_MAGIC_SYSRQ is not set
+CONFIG_KERNEL_ELF_CORE=y
 
 #
 # Package build options
@@ -1322,6 +1323,14 @@ CONFIG_PACKAGE_wireless-tools=y
 # Firewall
 #
 CONFIG_PACKAGE_ip6tables=y
+
+#
+# wide-dhcpv6
+#
+CONFIG_PACKAGE_wide-dhcpv6-client=m
+CONFIG_PACKAGE_wide-dhcpv6-control=m
+CONFIG_PACKAGE_wide-dhcpv6-relay=m
+CONFIG_PACKAGE_wide-dhcpv6-server=m
 CONFIG_PACKAGE_6in4=y
 CONFIG_PACKAGE_6to4=y
 CONFIG_PACKAGE_ahcpd=y
@@ -1332,7 +1341,7 @@ CONFIG_PACKAGE_dibbler-server=m
 CONFIG_PACKAGE_ipv6calc=m
 CONFIG_PACKAGE_mrd6=m
 CONFIG_PACKAGE_radvd=y
-# CONFIG_PACKAGE_radvdump is not set
+CONFIG_PACKAGE_radvdump=m
 
 #
 # LuCI
@@ -1370,6 +1379,7 @@ CONFIG_PACKAGE_luci-app-hd-idle=m
 CONFIG_PACKAGE_luci-app-openvpn=m
 # CONFIG_PACKAGE_luci-app-p2pblock is not set
 # CONFIG_PACKAGE_luci-app-p910nd is not set
+# CONFIG_PACKAGE_luci-app-pbx is not set
 CONFIG_PACKAGE_luci-app-polipo=y
 CONFIG_PACKAGE_luci-app-qos=y
 CONFIG_PACKAGE_luci-app-radvd=y
@@ -1485,7 +1495,7 @@ CONFIG_PACKAGE_freifunk-policyrouting=m
 # CONFIG_PACKAGE_kmod-nbd is not set
 # CONFIG_PACKAGE_kmod-scsi-cdrom is not set
 CONFIG_PACKAGE_kmod-scsi-core=y
-# CONFIG_PACKAGE_kmod-scsi-generic is not set
+CONFIG_PACKAGE_kmod-scsi-generic=m
 
 #
 # Cryptographic API modules
@@ -1787,12 +1797,12 @@ CONFIG_PACKAGE_kmod-usb-serial-ftdi=m
 # CONFIG_PACKAGE_kmod-usb-serial-mct is not set
 # CONFIG_PACKAGE_kmod-usb-serial-mos7720 is not set
 # CONFIG_PACKAGE_kmod-usb-serial-motorola-phone is not set
-# CONFIG_PACKAGE_kmod-usb-serial-option is not set
+CONFIG_PACKAGE_kmod-usb-serial-option=m
 # CONFIG_PACKAGE_kmod-usb-serial-oti6858 is not set
 CONFIG_PACKAGE_kmod-usb-serial-pl2303=m
 # CONFIG_PACKAGE_kmod-usb-serial-sierrawireless is not set
 # CONFIG_PACKAGE_kmod-usb-serial-visor is not set
-# CONFIG_PACKAGE_kmod-usb-serial-wwan is not set
+CONFIG_PACKAGE_kmod-usb-serial-wwan=m
 # CONFIG_PACKAGE_kmod-usb-sierrawireless-directip is not set
 CONFIG_PACKAGE_kmod-usb-storage=y
 CONFIG_PACKAGE_kmod-usb-storage-extras=m
@@ -2047,7 +2057,7 @@ CONFIG_PACKAGE_libubox=m
 CONFIG_PACKAGE_libuci=y
 CONFIG_PACKAGE_libuci-lua=y
 # CONFIG_PACKAGE_libupnp is not set
-# CONFIG_PACKAGE_libusb is not set
+CONFIG_PACKAGE_libusb=m
 CONFIG_PACKAGE_libusb-1.0=m
 CONFIG_PACKAGE_libval=m
 # CONFIG_PACKAGE_libval-shim is not set
@@ -2516,6 +2526,7 @@ CONFIG_PACKAGE_e2fsprogs=y
 # CONFIG_PACKAGE_cfdisk is not set
 CONFIG_PACKAGE_fdisk=m
 CONFIG_PACKAGE_hd-idle=m
+CONFIG_PACKAGE_sdparm=m
 # CONFIG_PACKAGE_sfdisk is not set
 CONFIG_PACKAGE_swap-utils=y
 # CONFIG_PACKAGE_bandwidthd is not set
@@ -2567,6 +2578,9 @@ CONFIG_PACKAGE_px5g=y
 CONFIG_PACKAGE_strace=m
 CONFIG_PACKAGE_time=y
 CONFIG_PACKAGE_uboot-envtools=m
+# CONFIG_PACKAGE_uboot-envtools_setenv_symlink is not set
+CONFIG_PACKAGE_usb-modeswitch=m
+CONFIG_PACKAGE_usb-modeswitch-data=m
 # CONFIG_PACKAGE_xfs-fsck is not set
 # CONFIG_PACKAGE_xfs-growfs is not set
 # CONFIG_PACKAGE_xfs-mkfs is not set
