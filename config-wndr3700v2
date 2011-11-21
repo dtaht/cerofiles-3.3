@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # OpenWrt version: Attitude Adjustment (r29240)
-# Fri Nov 18 06:11:36 2011
+# Mon Nov 21 13:22:10 2011
 #
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_ppc40x is not set
@@ -2363,6 +2363,7 @@ CONFIG_PACKAGE_lighttpd-mod-simple-vhost=y
 # CONFIG_PACKAGE_lighttpd-mod-usertrack is not set
 # CONFIG_PACKAGE_lighttpd-mod-webdav is not set
 CONFIG_PACKAGE_polipo=y
+CONFIG_PACKAGE_polipo-latest=m
 CONFIG_PACKAGE_privoxy=m
 # CONFIG_PACKAGE_tinyproxy is not set
 # CONFIG_PACKAGE_uhttpd is not set
@@ -2643,6 +2644,7 @@ CONFIG_PACKAGE_luac=m
 # Python
 #
 CONFIG_PACKAGE_python=m
+# CONFIG_PACKAGE_python-bzip2 is not set
 # CONFIG_PACKAGE_python-doc is not set
 # CONFIG_PACKAGE_python-expat is not set
 CONFIG_PACKAGE_python-gdbm=m
