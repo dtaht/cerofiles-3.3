@@ -68,7 +68,6 @@ lft
 io
 ntpclient
 rsync
-strongswan
 radvd
 openvpn
 oprofile
