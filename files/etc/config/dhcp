@@ -9,7 +9,7 @@ config dnsmasq
 	option local	'/home.lan/'
 	option domain	'home.lan'
 	option expandhosts	1
-	option port 53
+	option port 0
 	option nonegcache	0
 	option authoritative	1
 	option readethers	1
