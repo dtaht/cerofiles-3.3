@@ -140,7 +140,6 @@ estats
 dnsval
 babeld
 babelz
-quagga
 freeswitch
 nuttcp
 httping
