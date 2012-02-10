@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# OpenWrt version: Attitude Adjustment (r29981)
-# Sat Feb  4 20:29:51 2012
+# OpenWrt version: Attitude Adjustment (r30388)
+# Thu Feb  9 11:50:31 2012
 #
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_ppc40x is not set
@@ -1345,8 +1345,10 @@ CONFIG_PACKAGE_dhcp6-client=y
 CONFIG_PACKAGE_dhcp6-server=m
 CONFIG_PACKAGE_dibbler-client=m
 # CONFIG_PACKAGE_dibbler-relay is not set
+# CONFIG_PACKAGE_dibbler-requestor is not set
 CONFIG_PACKAGE_dibbler-server=m
 CONFIG_PACKAGE_ipv6calc=m
+CONFIG_PACKAGE_ipv6policy=m
 CONFIG_PACKAGE_mrd6=m
 CONFIG_PACKAGE_radvd=y
 CONFIG_PACKAGE_radvdump=m
@@ -1395,7 +1397,7 @@ CONFIG_PACKAGE_luci-app-openvpn=y
 CONFIG_PACKAGE_luci-app-polipo=y
 CONFIG_PACKAGE_luci-app-qos=y
 CONFIG_PACKAGE_luci-app-radvd=y
-# CONFIG_PACKAGE_luci-app-samba is not set
+CONFIG_PACKAGE_luci-app-samba=m
 CONFIG_PACKAGE_luci-app-siitwizard=m
 # CONFIG_PACKAGE_luci-app-splash is not set
 # CONFIG_PACKAGE_luci-app-statistics is not set
@@ -1432,7 +1434,7 @@ CONFIG_PACKAGE_luci-i18n-japanese=m
 CONFIG_PACKAGE_luci-i18n-malay=m
 CONFIG_PACKAGE_luci-i18n-norwegian=m
 CONFIG_PACKAGE_luci-i18n-portuguese=m
-CONFIG_PACKAGE_luci-i18n-portuguese_brazilian=m
+# CONFIG_PACKAGE_luci-i18n-portuguese-brazilian is not set
 CONFIG_PACKAGE_luci-i18n-romanian=m
 CONFIG_PACKAGE_luci-i18n-russian=m
 CONFIG_PACKAGE_luci-i18n-spanish=m
@@ -1997,15 +1999,20 @@ CONFIG_PACKAGE_fcgi=m
 # CONFIG_PACKAGE_fcgixx is not set
 # CONFIG_PACKAGE_glib2 is not set
 CONFIG_PACKAGE_jansson=m
+CONFIG_PACKAGE_libavahi=y
+CONFIG_PACKAGE_libavahi-client=y
+CONFIG_PACKAGE_libavahi-dbus-support=y
 # CONFIG_PACKAGE_libblobmsg-json is not set
 # CONFIG_PACKAGE_libbz2 is not set
 CONFIG_PACKAGE_libcap=y
 # CONFIG_PACKAGE_libcharset is not set
 CONFIG_PACKAGE_libcurl=m
+CONFIG_PACKAGE_libdaemon=y
 # CONFIG_PACKAGE_libdb47 is not set
 # CONFIG_PACKAGE_libdbi is not set
+CONFIG_PACKAGE_libdbus=y
 CONFIG_PACKAGE_libelf=m
-CONFIG_PACKAGE_libexpat=m
+CONFIG_PACKAGE_libexpat=y
 CONFIG_PACKAGE_libfaad2=m
 CONFIG_PACKAGE_libffi=m
 # CONFIG_PACKAGE_libffmpeg-custom is not set
@@ -2013,7 +2020,7 @@ CONFIG_PACKAGE_libffi=m
 # CONFIG_PACKAGE_libffmpeg-mini is not set
 CONFIG_PACKAGE_libgcrypt=m
 CONFIG_PACKAGE_libgd=m
-CONFIG_PACKAGE_libgdbm=m
+CONFIG_PACKAGE_libgdbm=y
 CONFIG_PACKAGE_libgmp=y
 CONFIG_PACKAGE_libgpg-error=m
 # CONFIG_PACKAGE_libgps is not set
@@ -2145,6 +2152,10 @@ CONFIG_PACKAGE_natpmp=m
 #
 # IP Addresses and Names
 #
+CONFIG_PACKAGE_avahi-autoipd=m
+CONFIG_PACKAGE_avahi-daemon=y
+CONFIG_PACKAGE_avahi-dnsconfd=y
+CONFIG_PACKAGE_avahi-utils=m
 CONFIG_PACKAGE_bind-latest-check=m
 CONFIG_PACKAGE_bind-latest-client=y
 CONFIG_PACKAGE_bind-latest-config=y
@@ -2210,9 +2221,9 @@ CONFIG_PACKAGE_quagga-vtysh=m
 #
 # Samba3 - NetBIOS/SMB
 #
-CONFIG_PACKAGE_samba3x-common=y
-CONFIG_PACKAGE_samba3x-client=y
-CONFIG_PACKAGE_samba3x-server=y
+CONFIG_PACKAGE_samba3x-common=m
+CONFIG_PACKAGE_samba3x-client=m
+CONFIG_PACKAGE_samba3x-server=m
 
 #
 # Telephony
@@ -2377,6 +2388,7 @@ CONFIG_PACKAGE_polipo=y
 CONFIG_PACKAGE_privoxy=m
 # CONFIG_PACKAGE_tinyproxy is not set
 # CONFIG_PACKAGE_uhttpd is not set
+CONFIG_PACKAGE_alttcp=m
 CONFIG_PACKAGE_bing=m
 CONFIG_PACKAGE_bwping=m
 CONFIG_PACKAGE_ccnx=m
@@ -2547,6 +2559,8 @@ CONFIG_PACKAGE_cerowrt-chrome=y
 # CONFIG_PACKAGE_collectd is not set
 CONFIG_PACKAGE_comgt=m
 # CONFIG_PACKAGE_coreutils is not set
+CONFIG_PACKAGE_dbus=y
+# CONFIG_PACKAGE_dbus-utils is not set
 # CONFIG_PACKAGE_dropbearconvert is not set
 # CONFIG_PACKAGE_dropbearconvert-xinetd is not set
 CONFIG_PACKAGE_fconfig=m

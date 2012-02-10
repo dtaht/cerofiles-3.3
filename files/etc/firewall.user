@@ -31,7 +31,9 @@ ip6tables -I OUTPUT -j LOG
 iptables -I INPUT 1 -p 51 -j ACCEPT
 iptables -I INPUT 1 -p 50 -j ACCEPT
 iptables -I INPUT 1 -p 41 -j ACCEPT
-
+iptables -I INPUT -p 2 -j ACCEPT                                  
+ip6tables -I INPUT -p 2 -j ACCEPT                 
+iptables -I FORWARD -p 2 -j ACCEPT
 
 # Allow forwarding
 #ip6tables -A FORWARD -i br-lan -j ACCEPT
