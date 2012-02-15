@@ -159,3 +159,4 @@ aqm-scripts
 luci-app-aqm
 luci-app-babeld
 rng-tools
+avahi-daemon
