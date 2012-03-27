@@ -161,3 +161,4 @@ luci-app-babeld
 rng-tools
 avahi-daemon
 fprobe
+conntrack-tools
