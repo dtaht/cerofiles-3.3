@@ -5,3 +5,4 @@ alttcp
 kmod-tcp-ledbat
 dibbler-server
 ntpd-ssl
+rsync
