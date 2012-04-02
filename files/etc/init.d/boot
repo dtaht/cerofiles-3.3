@@ -82,9 +82,9 @@ start() {
 	config_foreach system_config system
 
 	killall -q hotplug2
-	# Debloat driver
-	ethtool -G eth0 tx 4
-	ethtool -G eth1 tx 4
+	# Debloat driver not needed in the BQL age
+	# ethtool -G eth0 tx 4
+	# ethtool -G eth1 tx 4
 	# Change device names
 	/sbin/fixeth
 
