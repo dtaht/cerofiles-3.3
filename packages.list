@@ -37,7 +37,6 @@ libmodbus
 vtun
 fping
 openldap
-samba3
 binutils
 hd-idle
 strace
@@ -153,7 +152,7 @@ dropbear-xinetd
 ccnx
 dibbler-server
 openssh
-samba3x-server
+samba36-server
 zile
 aqm-scripts
 luci-app-aqm
