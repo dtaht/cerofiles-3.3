@@ -161,3 +161,5 @@ rng-tools
 avahi-daemon
 fprobe
 conntrack-tools
+openssh-sftp-server
+rrd-tool
