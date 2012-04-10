@@ -18,117 +18,124 @@ config prefix
 	option AdvRouterAddr '0'
 	option ignore '0'
 
-config route
+config interface
+	option interface 'sw00'
+	option AdvSendAdvert '1'
+	option AdvRouterAddr '1'
+	option AdvLinkMTU '1480'
+	option ignore '0'
+	option IgnoreIfMissing '1'
+	option AdvSourceLLAddress '1'
+	option AdvDefaultPreference 'medium'
+	option AdvOtherConfigFlag '1'
+
+config prefix
+	option interface 'sw00'
+	list prefix ''
+	option AdvOnLink '1'
+	option AdvAutonomous '1'
+	option AdvRouterAddr '0'
+	option ignore '0'
+
+config interface
+	option interface 'sw10'
+	option AdvSendAdvert '1'
+	option AdvRouterAddr '1'
+	option AdvLinkMTU '1480'
+	option ignore '0'
+	option IgnoreIfMissing '1'
+	option AdvSourceLLAddress '1'
+	option AdvDefaultPreference 'medium'
+	option AdvOtherConfigFlag '1'
+
+config prefix
+	option interface 'sw10'
+	list prefix ''
+	option AdvOnLink '1'
+	option AdvAutonomous '1'
+	option AdvRouterAddr '0'
+	option ignore '0'
+
+config interface
+	option interface 'gw00'
+	option AdvSendAdvert '1'
+	option AdvRouterAddr '1'
+	option AdvLinkMTU '1480'
+	option ignore '0'
+	option IgnoreIfMissing '1'
+	option AdvSourceLLAddress '1'
+	option AdvDefaultPreference 'medium'
+	option AdvOtherConfigFlag '1'
+
+config prefix
+	option interface 'gw00'
+	list prefix ''
+	option AdvOnLink '1'
+	option AdvAutonomous '1'
+	option AdvRouterAddr '0'
+	option ignore '0'
+
+config interface
+	option interface 'gw10'
+	option AdvSendAdvert '1'
+	option AdvRouterAddr '1'
+	option AdvLinkMTU '1480'
+	option ignore '0'
+	option IgnoreIfMissing '1'
+	option AdvSourceLLAddress '1'
+	option AdvDefaultPreference 'medium'
+	option AdvOtherConfigFlag '1'
+
+config prefix
+	option interface 'gw10'
+	list prefix ''
+	option AdvOnLink '1'
+	option AdvAutonomous '1'
+	option AdvRouterAddr '0'
+	option ignore '0'
+
+config rdnss
+	option ignore '0'
 	option interface 'se00'
-	option prefix '::/0'
+
+config dnssl
 	option ignore '0'
-	option AdvRoutePreference 'medium'
-	option AdvRouteLifetime '300'
+	option interface 'se00'
+	list suffix 'home.lan'
 
-
-config interface
+config rdnss
+	option ignore '0'
 	option interface 'sw00'
-	option AdvSendAdvert '1'
-	option AdvRouterAddr '1'
-	option AdvLinkMTU '1480'
-	option ignore '0'
-	option IgnoreIfMissing '1'
-	option AdvSourceLLAddress '1'
-	option AdvDefaultPreference 'medium'
-	option AdvOtherConfigFlag '1'
 
-config prefix
+config dnssl
+	option ignore '0'
 	option interface 'sw00'
-	list prefix ''
-	option AdvOnLink '1'
-	option AdvAutonomous '1'
-	option AdvRouterAddr '0'
+	list suffix 'home.lan'
+
+config rdnss
 	option ignore '0'
-
-config route
-	option interface 'sw00'
-	option prefix '::/0'
-	option ignore '0'
-	option AdvRoutePreference 'medium'
-	option AdvRouteLifetime '300'
-
-
-config interface
 	option interface 'sw10'
-	option AdvSendAdvert '1'
-	option AdvRouterAddr '1'
-	option AdvLinkMTU '1480'
-	option ignore '0'
-	option IgnoreIfMissing '1'
-	option AdvSourceLLAddress '1'
-	option AdvDefaultPreference 'medium'
-	option AdvOtherConfigFlag '1'
 
-config prefix
+config dnssl
+	option ignore '0'
 	option interface 'sw10'
-	list prefix ''
-	option AdvOnLink '1'
-	option AdvAutonomous '1'
-	option AdvRouterAddr '0'
-	option ignore '0'
+	list suffix 'home.lan'
 
-config route
-	option interface 'sw10'
-	option prefix '::/0'
+config rdnss
 	option ignore '0'
-	option AdvRoutePreference 'medium'
-	option AdvRouteLifetime '300'
-
-config interface
 	option interface 'gw00'
-	option AdvSendAdvert '1'
-	option AdvRouterAddr '1'
-	option AdvLinkMTU '1480'
-	option ignore '0'
-	option IgnoreIfMissing '1'
-	option AdvSourceLLAddress '1'
-	option AdvDefaultPreference 'medium'
-	option AdvOtherConfigFlag '1'
 
-config prefix
+config dnssl
+	option ignore '0'
 	option interface 'gw00'
-	list prefix ''
-	option AdvOnLink '1'
-	option AdvAutonomous '1'
-	option AdvRouterAddr '0'
+	list suffix 'home.lan'
+
+config rdnss
 	option ignore '0'
-
-config route
-	option interface 'gw00'
-	option prefix '::/0'
-	option ignore '0'
-	option AdvRoutePreference 'medium'
-	option AdvRouteLifetime '300'
-
-
-config interface
 	option interface 'gw10'
-	option AdvSendAdvert '1'
-	option AdvRouterAddr '1'
-	option AdvLinkMTU '1480'
-	option ignore '0'
-	option IgnoreIfMissing '1'
-	option AdvSourceLLAddress '1'
-	option AdvDefaultPreference 'medium'
-	option AdvOtherConfigFlag '1'
 
-config prefix
-	option interface 'gw10'
-	list prefix ''
-	option AdvOnLink '1'
-	option AdvAutonomous '1'
-	option AdvRouterAddr '0'
+config dnssl
 	option ignore '0'
-
-config route
 	option interface 'gw10'
-	option prefix '::/0'
-	option ignore '0'
-	option AdvRoutePreference 'medium'
-	option AdvRouteLifetime '300'
+	list suffix 'home.lan'
 
