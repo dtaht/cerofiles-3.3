@@ -163,3 +163,4 @@ fprobe
 conntrack-tools
 openssh-sftp-server
 rrd-tool
+krb5-server
