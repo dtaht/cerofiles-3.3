@@ -39,11 +39,11 @@ clones $CERO_RWREPOS
 
 # Save disk, spin up cerowrt dir referencing openwrt
 
-git clone --reference openwrt $CERO_MAIN cerowrt
+git clone --reference openwrt $CERO_MAIN
 
 # Now build up
 
-git clone cerowrt $CERO_TARGET
+git clone $CERO_MAIN $CERO_TARGET
 
 echo 'Building sub-repositories'
 
