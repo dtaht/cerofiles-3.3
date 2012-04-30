@@ -162,8 +162,12 @@ avahi-daemon
 fprobe
 conntrack-tools
 openssh-sftp-server
-rrd-tool
 krb5-server
 tcsh
 python-mini
 python
+scamper
+rrdtool
+openhip-daemon
+bulk-update
+wide-dhcpv6-client
