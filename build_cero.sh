@@ -33,7 +33,7 @@ clones $CERO_RWREPOS
 
 # Bootstrapping cerofiles again if not already in this dir
 
-[ ! -e cerofiles ] && { 
+[ ! -e cerofiles-3.3 ] && { 
      git clone git://github.com/dtaht/cerofiles-3.3.git;
 }
 
@@ -51,7 +51,7 @@ cd $CERO_TARGET/
 #mkdir files
 yes | ./scripts/env new dbg
 cd env
-git remote add ceromain $CERO_DIR/cerofiles
+git remote add ceromain $CERO_DIR/cerofiles-3.3
 git pull ceromain master
 cd $CERO_DIR/$CERO_TARGET/env/files
 [ ! -e ../dirs.list ] && { 
