@@ -7,8 +7,8 @@ CERO_DIR=$HOME/src
 # Ceropackages is a fast way to spin up new packages before 
 # submitting to openwrt's main repos.
 
-CERO_ROREPOS="git://github.com/dtaht/cerowrt-luci.git git://nbd.name/packages.git git://nbd.name/openwrt.git git://github.com/yiannisy/openflow-openwrt-bismark.git"
-CERO_RWREPOS="git://github.com/projectbismark/bismark-packages.git git://github.com/dtaht/ceropackages.git "
+CERO_ROREPOS="git://github.com/dtaht/cerowrt-luci-3.3.git git://github.com/dtaht/cerowrt-packages-3.3.git git://nbd.name/packages.git git://nbd.name/openwrt.git git://github.com/yiannisy/openflow-openwrt-bismark.git"
+CERO_RWREPOS="git://github.com/projectbismark/bismark-packages.git git://github.com/dtaht/ceropackages-3.3.git "
 CERO_MAIN=git://github.com/dtaht/Cerowrt-3.3.git
 CERO_TARGET=wndr3700v2
 
