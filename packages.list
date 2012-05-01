@@ -171,3 +171,8 @@ rrdtool
 openhip-daemon
 bulk-update
 wide-dhcpv6-client
+scamper
+rrdtool
+xorp
+tcsh
+bulk-update
