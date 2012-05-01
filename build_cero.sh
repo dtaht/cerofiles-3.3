@@ -33,17 +33,17 @@ clones $CERO_RWREPOS
 
 # Bootstrapping cerofiles again if not already in this dir
 
-[ ! -e cerofiles ] && { 
-     git clone git://github.com/dtaht/cerofiles.git;
+[ ! -e cerofiles-3.3 ] && { 
+     git clone git://github.com/dtaht/cerofiles-3.3.git;
 }
 
 # Save disk, spin up cerowrt dir referencing openwrt
 
-git clone --reference openwrt $CERO_MAIN cerowrt
+git clone --reference openwrt $CERO_MAIN
 
 # Now build up
 
-git clone cerowrt $CERO_TARGET
+git clone $CERO_MAIN $CERO_TARGET
 
 echo 'Building sub-repositories'
 
@@ -51,7 +51,7 @@ cd $CERO_TARGET/
 #mkdir files
 yes | ./scripts/env new dbg
 cd env
-git remote add ceromain $CERO_DIR/cerofiles
+git remote add ceromain $CERO_DIR/cerofiles-3.3
 git pull ceromain master
 cd $CERO_DIR/$CERO_TARGET/env/files
 [ ! -e ../dirs.list ] && { 
@@ -63,6 +63,7 @@ cd ../..
 cat env/feeds.conf | sed s#/home/cero1/src#$CERO_DIR# > feeds.conf
 echo 'updating feeds'
 ./scripts/feeds update 
+./scripts/feeds install -p cero `cat env/override.list`
 ./scripts/feeds install `cat env/packages.list`
 cp env/config-$CERO_TARGET .config
 cp .config config.orig
@@ -94,7 +95,7 @@ rm -f ${TC1}.new ${TC1}.old
 
 clean() {
 cd $CERO_DIR
-rm -rf luci packages openwrt ceropackages bismark-packages cerofiles public_html/cerowrt cerowrt Ceropatches openflow-openwrt-bismark
+rm -rf cerowrt-luci packages openwrt ceropackages bismark-packages cerofiles-3.3 public_html/cerowrt cerowrt-3.3 openflow-openwrt-bismark
 cd ~
 }
 
