@@ -20,7 +20,7 @@ config zone
 
 config zone
 	option input 'ACCEPT'
-	option forward 'REJECT'
+	option forward 'ACCEPT'
 	option output 'ACCEPT'
 	option name 'lan'
 	option network 'se00 sw00 sw10'
