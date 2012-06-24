@@ -108,3 +108,17 @@ config rule
 	option src '*'
 	option dest '*'
 
+config rule
+        option src 'wan'         
+        option proto 'tcp udp'       
+        option dest_port '81 137 138 139 445 9091'
+        option name 'blockconfig'
+        option target 'DROP'
+
+config rule
+        option src 'guest'         
+        option proto 'tcp udp'       
+        option dest_port '81 137 138 139 445'    
+        option name 'blockconfig2'
+        option target 'DROP'
+
