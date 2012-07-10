@@ -176,3 +176,7 @@ rrdtool
 xorp
 tcsh
 bulk-update
+mini-upnpd
+transmission
+gpsd
+gdisk
