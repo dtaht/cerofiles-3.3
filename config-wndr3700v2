@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# OpenWrt version: Attitude Adjustment (r32649)
-# Mon Jul  9 17:18:50 2012
+# OpenWrt version: Attitude Adjustment (r33148)
+# Sun Aug 12 11:00:33 2012
 #
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_ppc40x is not set
@@ -12,6 +12,7 @@ CONFIG_TARGET_ar71xx=y
 # CONFIG_TARGET_at91 is not set
 # CONFIG_TARGET_avr32 is not set
 # CONFIG_TARGET_etrax is not set
+# CONFIG_TARGET_brcm2708 is not set
 # CONFIG_TARGET_brcm63xx is not set
 # CONFIG_TARGET_brcm47xx is not set
 # CONFIG_TARGET_sibyte is not set
@@ -90,6 +91,8 @@ CONFIG_TARGET_ar71xx_generic=y
 # CONFIG_TARGET_lantiq_ase is not set
 # CONFIG_TARGET_lantiq_danube is not set
 # CONFIG_TARGET_lantiq_falcon is not set
+# CONFIG_TARGET_lantiq_svip_be is not set
+# CONFIG_TARGET_lantiq_svip_le is not set
 # CONFIG_TARGET_lantiq_vr9 is not set
 # CONFIG_TARGET_adm5120_router_le is not set
 # CONFIG_TARGET_adm5120_router_be is not set
@@ -114,6 +117,7 @@ CONFIG_TARGET_ar71xx_generic=y
 # CONFIG_TARGET_ar71xx_generic_AP113 is not set
 # CONFIG_TARGET_ar71xx_generic_AP121 is not set
 # CONFIG_TARGET_ar71xx_generic_AP121MINI is not set
+# CONFIG_TARGET_ar71xx_generic_AP136 is not set
 # CONFIG_TARGET_ar71xx_generic_AP81 is not set
 # CONFIG_TARGET_ar71xx_generic_AP83 is not set
 # CONFIG_TARGET_ar71xx_generic_AP96 is not set
@@ -234,6 +238,7 @@ CONFIG_TARGET_ar71xx_generic_WNDR3700=y
 # CONFIG_TARGET_brcm63xx_Atheros is not set
 # CONFIG_TARGET_brcm63xx_Ralink is not set
 # CONFIG_TARGET_brcm63xx_NoWiFi is not set
+# CONFIG_TARGET_brcm63xx_Broadcom-brcmsmac is not set
 # CONFIG_TARGET_brcm63xx_GW6X00 is not set
 # CONFIG_TARGET_etrax_default is not set
 # CONFIG_TARGET_etrax_vhdl_no_fb is not set
@@ -297,6 +302,11 @@ CONFIG_TARGET_ar71xx_generic_WNDR3700=y
 # CONFIG_TARGET_lantiq_falcon_Generic is not set
 # CONFIG_TARGET_lantiq_falcon_EASY98000 is not set
 # CONFIG_TARGET_lantiq_falcon_EASY98020 is not set
+# CONFIG_TARGET_lantiq_svip_be_Generic is not set
+# CONFIG_TARGET_lantiq_svip_be_EASY336 is not set
+# CONFIG_TARGET_lantiq_svip_be_EASY33016 is not set
+# CONFIG_TARGET_lantiq_svip_le_Generic is not set
+# CONFIG_TARGET_lantiq_svip_le_EASY336 is not set
 # CONFIG_TARGET_lantiq_vr9_Generic is not set
 # CONFIG_TARGET_lantiq_vr9_FRITZ3370 is not set
 # CONFIG_TARGET_adm5120_router_le_Generic is not set
@@ -340,6 +350,7 @@ CONFIG_TARGET_ar71xx_generic_WNDR3700=y
 # CONFIG_TARGET_ep93xx_Default is not set
 # CONFIG_TARGET_ep93xx_Simone is not set
 # CONFIG_TARGET_goldfish_Default is not set
+# CONFIG_TARGET_brcm2708_RaspberryPi is not set
 # CONFIG_TARGET_s3c24xx_openmoko_gta02_openmoko-gta02-minimal is not set
 # CONFIG_TARGET_s3c24xx_openmoko_gta02_openmoko-gta02-full is not set
 # CONFIG_TARGET_au1000_au1500_Atheros is not set
@@ -540,7 +551,7 @@ CONFIG_TARGET_INIT_SUPPRESS_STDERR=y
 #
 # Base system
 #
-CONFIG_PACKAGE_aqm-scripts=y
+CONFIG_PACKAGE_aqm-scripts=m
 CONFIG_PACKAGE_base-files=y
 CONFIG_PACKAGE_block-mount=y
 CONFIG_EXTROOT_SETTLETIME=20
@@ -1333,6 +1344,7 @@ CONFIG_BUSYBOX_CONFIG_KLOGD=y
 CONFIG_BUSYBOX_CONFIG_FEATURE_KLOGD_KLOGCTL=y
 CONFIG_BUSYBOX_CONFIG_LOGGER=y
 CONFIG_PACKAGE_dnsmasq=y
+CONFIG_PACKAGE_dnsmasq-dhcpv6=y
 # CONFIG_PACKAGE_dropbear is not set
 CONFIG_PACKAGE_dropbear-xinetd=y
 # CONFIG_PACKAGE_ead is not set
@@ -1482,10 +1494,6 @@ CONFIG_PACKAGE_bind-latest-rndc=y
 CONFIG_PACKAGE_bind-latest-server=y
 CONFIG_PACKAGE_bind-latest-tools=y
 CONFIG_PACKAGE_ddns-scripts=y
-CONFIG_PACKAGE_dhcp-client=m
-CONFIG_PACKAGE_dhcp-omshell=m
-CONFIG_PACKAGE_dhcp-relay=m
-CONFIG_PACKAGE_dhcp-server=m
 CONFIG_PACKAGE_dnsval=y
 CONFIG_PACKAGE_dudders=m
 # CONFIG_PACKAGE_howl-autoipd is not set
@@ -1494,6 +1502,14 @@ CONFIG_PACKAGE_howl-mdnsresponder=m
 # CONFIG_PACKAGE_howl-utils is not set
 # CONFIG_PACKAGE_in-dhcp is not set
 # CONFIG_PACKAGE_in-dns is not set
+# CONFIG_PACKAGE_isc-dhcp-client-ipv4 is not set
+CONFIG_PACKAGE_isc-dhcp-client-ipv6=m
+# CONFIG_PACKAGE_isc-dhcp-omshell-ipv4 is not set
+CONFIG_PACKAGE_isc-dhcp-omshell-ipv6=m
+# CONFIG_PACKAGE_isc-dhcp-relay-ipv4 is not set
+CONFIG_PACKAGE_isc-dhcp-relay-ipv6=m
+# CONFIG_PACKAGE_isc-dhcp-server-ipv4 is not set
+CONFIG_PACKAGE_isc-dhcp-server-ipv6=m
 CONFIG_PACKAGE_mdns-utils=m
 CONFIG_PACKAGE_mdnsd=m
 CONFIG_PACKAGE_mdnsresponder=m
@@ -1513,6 +1529,8 @@ CONFIG_PACKAGE_leafnode-extra=m
 # Routing and Redirection
 #
 CONFIG_PACKAGE_babeld=m
+CONFIG_PACKAGE_bird4=m
+CONFIG_PACKAGE_birdc4=m
 CONFIG_PACKAGE_igmpproxy=m
 CONFIG_PACKAGE_ip=y
 CONFIG_PACKAGE_olsrd=m
@@ -1602,78 +1620,77 @@ CONFIG_OPENVPN_DISABLE_MANAGEMENT=y
 # CONFIG_OPENVPN_DISABLE_DEF_AUTH is not set
 # CONFIG_OPENVPN_DISABLE_PF is not set
 CONFIG_PACKAGE_openvpn-easy-rsa=m
-CONFIG_PACKAGE_strongswan4=y
-
-#
-# Configuration
-#
-CONFIG_STRONGSWAN4_ENABLE_CISCO_QUIRKS=y
-CONFIG_STRONGSWAN4_ENABLE_NAT_TRANSPORT=y
-CONFIG_STRONGSWAN4_ENABLE_VENDOR_ID=y
-CONFIG_STRONGSWAN4_ENABLE_XAUTH_VID=y
-CONFIG_STRONGSWAN4_DEVICE_RANDOM="/dev/random"
-CONFIG_STRONGSWAN4_DEVICE_URANDOM="/dev/urandom"
-CONFIG_STRONGSWAN4_ROUTING_TABLE="220"
-CONFIG_STRONGSWAN4_ROUTING_TABLE_PRIO="220"
-CONFIG_PACKAGE_strongswan4-app-charon=y
-CONFIG_PACKAGE_strongswan4-app-pluto=y
-CONFIG_PACKAGE_strongswan4-default=y
-CONFIG_PACKAGE_strongswan4-full=m
-CONFIG_PACKAGE_strongswan4-libfast=m
-CONFIG_PACKAGE_strongswan4-minimal=m
-CONFIG_PACKAGE_strongswan4-mod-aes=y
-CONFIG_PACKAGE_strongswan4-mod-af-alg=m
-CONFIG_PACKAGE_strongswan4-mod-agent=m
-CONFIG_PACKAGE_strongswan4-mod-attr=y
-CONFIG_PACKAGE_strongswan4-mod-attr-sql=m
-CONFIG_PACKAGE_strongswan4-mod-blowfish=m
-CONFIG_PACKAGE_strongswan4-mod-constraints=y
-CONFIG_PACKAGE_strongswan4-mod-coupling=m
-CONFIG_PACKAGE_strongswan4-mod-curl=m
-CONFIG_PACKAGE_strongswan4-mod-des=y
-CONFIG_PACKAGE_strongswan4-mod-dhcp=y
-CONFIG_PACKAGE_strongswan4-mod-dnskey=y
-CONFIG_PACKAGE_strongswan4-mod-duplicheck=m
-CONFIG_PACKAGE_strongswan4-mod-eap-md5=m
-CONFIG_PACKAGE_strongswan4-mod-eap-mschapv2=m
-CONFIG_PACKAGE_strongswan4-mod-eap-radius=m
-CONFIG_PACKAGE_strongswan4-mod-farp=m
-CONFIG_PACKAGE_strongswan4-mod-fips-prf=y
-CONFIG_PACKAGE_strongswan4-mod-gcrypt=m
-CONFIG_PACKAGE_strongswan4-mod-gmp=y
-CONFIG_PACKAGE_strongswan4-mod-hmac=y
-CONFIG_PACKAGE_strongswan4-mod-kernel-klips=m
-CONFIG_PACKAGE_strongswan4-mod-kernel-netlink=y
-CONFIG_PACKAGE_strongswan4-mod-kernel-pfkey=m
-CONFIG_PACKAGE_strongswan4-mod-ldap=m
-CONFIG_PACKAGE_strongswan4-mod-led=m
-CONFIG_PACKAGE_strongswan4-mod-load-tester=m
-CONFIG_PACKAGE_strongswan4-mod-md5=y
-CONFIG_PACKAGE_strongswan4-mod-medcli=m
-CONFIG_PACKAGE_strongswan4-mod-medsrv=m
-CONFIG_PACKAGE_strongswan4-mod-mysql=m
-CONFIG_PACKAGE_strongswan4-mod-pem=y
-CONFIG_PACKAGE_strongswan4-mod-pgp=y
-CONFIG_PACKAGE_strongswan4-mod-pkcs1=y
-CONFIG_PACKAGE_strongswan4-mod-pubkey=y
-CONFIG_PACKAGE_strongswan4-mod-random=y
-CONFIG_PACKAGE_strongswan4-mod-resolve=y
-CONFIG_PACKAGE_strongswan4-mod-revocation=y
-CONFIG_PACKAGE_strongswan4-mod-sha1=y
-CONFIG_PACKAGE_strongswan4-mod-sha2=y
-CONFIG_PACKAGE_strongswan4-mod-smp=m
-CONFIG_PACKAGE_strongswan4-mod-socket-default=m
-CONFIG_PACKAGE_strongswan4-mod-socket-raw=y
-CONFIG_PACKAGE_strongswan4-mod-sql=m
-CONFIG_PACKAGE_strongswan4-mod-sqlite=m
-CONFIG_PACKAGE_strongswan4-mod-stroke=y
-CONFIG_PACKAGE_strongswan4-mod-uci=m
-CONFIG_PACKAGE_strongswan4-mod-updown=y
-CONFIG_PACKAGE_strongswan4-mod-whitelist=m
-CONFIG_PACKAGE_strongswan4-mod-x509=y
-CONFIG_PACKAGE_strongswan4-mod-xauth=y
-CONFIG_PACKAGE_strongswan4-mod-xcbc=y
-CONFIG_PACKAGE_strongswan4-utils=y
+# CONFIG_PACKAGE_strongswan is not set
+# CONFIG_PACKAGE_strongswan-charon is not set
+# CONFIG_PACKAGE_strongswan-default is not set
+# CONFIG_PACKAGE_strongswan-full is not set
+# CONFIG_PACKAGE_strongswan-libfast is not set
+# CONFIG_PACKAGE_strongswan-minimal is not set
+# CONFIG_PACKAGE_strongswan-mod-addrblock is not set
+# CONFIG_PACKAGE_strongswan-mod-aes is not set
+# CONFIG_PACKAGE_strongswan-mod-af-alg is not set
+# CONFIG_PACKAGE_strongswan-mod-agent is not set
+# CONFIG_PACKAGE_strongswan-mod-attr is not set
+# CONFIG_PACKAGE_strongswan-mod-attr-sql is not set
+# CONFIG_PACKAGE_strongswan-mod-blowfish is not set
+# CONFIG_PACKAGE_strongswan-mod-ccm is not set
+# CONFIG_PACKAGE_strongswan-mod-cmac is not set
+# CONFIG_PACKAGE_strongswan-mod-constraints is not set
+# CONFIG_PACKAGE_strongswan-mod-coupling is not set
+# CONFIG_PACKAGE_strongswan-mod-ctr is not set
+# CONFIG_PACKAGE_strongswan-mod-curl is not set
+# CONFIG_PACKAGE_strongswan-mod-des is not set
+# CONFIG_PACKAGE_strongswan-mod-dhcp is not set
+# CONFIG_PACKAGE_strongswan-mod-dnskey is not set
+# CONFIG_PACKAGE_strongswan-mod-duplicheck is not set
+# CONFIG_PACKAGE_strongswan-mod-eap-identity is not set
+# CONFIG_PACKAGE_strongswan-mod-eap-md5 is not set
+# CONFIG_PACKAGE_strongswan-mod-eap-mschapv2 is not set
+# CONFIG_PACKAGE_strongswan-mod-farp is not set
+# CONFIG_PACKAGE_strongswan-mod-fips-prf is not set
+# CONFIG_PACKAGE_strongswan-mod-gcm is not set
+# CONFIG_PACKAGE_strongswan-mod-gcrypt is not set
+# CONFIG_PACKAGE_strongswan-mod-gmp is not set
+# CONFIG_PACKAGE_strongswan-mod-ha is not set
+# CONFIG_PACKAGE_strongswan-mod-hmac is not set
+# CONFIG_PACKAGE_strongswan-mod-kernel-klips is not set
+# CONFIG_PACKAGE_strongswan-mod-kernel-netlink is not set
+# CONFIG_PACKAGE_strongswan-mod-kernel-pfkey is not set
+# CONFIG_PACKAGE_strongswan-mod-ldap is not set
+# CONFIG_PACKAGE_strongswan-mod-led is not set
+# CONFIG_PACKAGE_strongswan-mod-load-tester is not set
+# CONFIG_PACKAGE_strongswan-mod-md4 is not set
+# CONFIG_PACKAGE_strongswan-mod-md5 is not set
+# CONFIG_PACKAGE_strongswan-mod-mysql is not set
+# CONFIG_PACKAGE_strongswan-mod-nonce is not set
+# CONFIG_PACKAGE_strongswan-mod-openssl is not set
+# CONFIG_PACKAGE_strongswan-mod-pem is not set
+# CONFIG_PACKAGE_strongswan-mod-pgp is not set
+# CONFIG_PACKAGE_strongswan-mod-pkcs1 is not set
+# CONFIG_PACKAGE_strongswan-mod-pkcs11 is not set
+# CONFIG_PACKAGE_strongswan-mod-pkcs8 is not set
+# CONFIG_PACKAGE_strongswan-mod-pubkey is not set
+# CONFIG_PACKAGE_strongswan-mod-random is not set
+# CONFIG_PACKAGE_strongswan-mod-resolve is not set
+# CONFIG_PACKAGE_strongswan-mod-revocation is not set
+# CONFIG_PACKAGE_strongswan-mod-sha1 is not set
+# CONFIG_PACKAGE_strongswan-mod-sha2 is not set
+# CONFIG_PACKAGE_strongswan-mod-smp is not set
+# CONFIG_PACKAGE_strongswan-mod-socket-default is not set
+# CONFIG_PACKAGE_strongswan-mod-socket-dynamic is not set
+# CONFIG_PACKAGE_strongswan-mod-socket-raw is not set
+# CONFIG_PACKAGE_strongswan-mod-sql is not set
+# CONFIG_PACKAGE_strongswan-mod-sqlite is not set
+# CONFIG_PACKAGE_strongswan-mod-stroke is not set
+# CONFIG_PACKAGE_strongswan-mod-test-vectors is not set
+# CONFIG_PACKAGE_strongswan-mod-uci is not set
+# CONFIG_PACKAGE_strongswan-mod-updown is not set
+# CONFIG_PACKAGE_strongswan-mod-whitelist is not set
+# CONFIG_PACKAGE_strongswan-mod-x509 is not set
+# CONFIG_PACKAGE_strongswan-mod-xauth-eap is not set
+# CONFIG_PACKAGE_strongswan-mod-xauth-generic is not set
+# CONFIG_PACKAGE_strongswan-mod-xcbc is not set
+# CONFIG_PACKAGE_strongswan-utils is not set
 CONFIG_PACKAGE_uanytun=m
 # CONFIG_PACKAGE_uanytun-nocrypt is not set
 CONFIG_PACKAGE_uanytun-sslcrypt=m
@@ -1774,7 +1791,7 @@ CONFIG_PACKAGE_openhip-daemon=m
 # CONFIG_PACKAGE_openldap-server is not set
 # CONFIG_PACKAGE_oping is not set
 # CONFIG_PACKAGE_p910nd is not set
-CONFIG_PACKAGE_paris-traceroute=m
+# CONFIG_PACKAGE_paris-traceroute is not set
 CONFIG_PACKAGE_portmap=m
 CONFIG_PACKAGE_ppp=y
 # CONFIG_PACKAGE_ppp-mod-pppoa is not set
@@ -1793,6 +1810,7 @@ CONFIG_PACKAGE_shaperprobe=m
 CONFIG_PACKAGE_snmp-utils=m
 CONFIG_PACKAGE_snmpd=y
 # CONFIG_PACKAGE_snmpd-static is not set
+# CONFIG_PACKAGE_soloscli is not set
 # CONFIG_PACKAGE_ss is not set
 CONFIG_PACKAGE_tc=y
 # CONFIG_PACKAGE_tcpdump is not set
@@ -1864,7 +1882,7 @@ CONFIG_PACKAGE_libopenssl=y
 #
 # Configuration
 #
-# CONFIG_OPENSSL_ENGINE is not set
+# CONFIG_OPENSSL_ENGINE_CRYPTO is not set
 
 #
 # database
@@ -2019,12 +2037,14 @@ CONFIG_PACKAGE_6in4=y
 CONFIG_PACKAGE_6rd=y
 CONFIG_PACKAGE_6to4=y
 CONFIG_PACKAGE_ahcpd=y
+CONFIG_PACKAGE_bird6=m
+CONFIG_PACKAGE_birdc6=m
 CONFIG_PACKAGE_dhcp6-client=m
 CONFIG_PACKAGE_dhcp6-server=m
-CONFIG_PACKAGE_dibbler-client=m
+# CONFIG_PACKAGE_dibbler-client is not set
 # CONFIG_PACKAGE_dibbler-relay is not set
 # CONFIG_PACKAGE_dibbler-requestor is not set
-CONFIG_PACKAGE_dibbler-server=m
+# CONFIG_PACKAGE_dibbler-server is not set
 CONFIG_PACKAGE_ipv6calc=m
 # CONFIG_PACKAGE_ipv6calc-mini is not set
 # CONFIG_PACKAGE_ipv6log is not set
@@ -2055,7 +2075,7 @@ CONFIG_PACKAGE_luci-mod-rpc=m
 # 3. Applications
 #
 CONFIG_PACKAGE_luci-app-ahcp=y
-CONFIG_PACKAGE_luci-app-aqm=y
+CONFIG_PACKAGE_luci-app-aqm=m
 CONFIG_PACKAGE_luci-app-ddns=y
 # CONFIG_PACKAGE_luci-app-diag-core is not set
 # CONFIG_PACKAGE_luci-app-diag-devinfo is not set
@@ -2188,6 +2208,7 @@ CONFIG_PACKAGE_freifunk-policyrouting=m
 # CONFIG_PACKAGE_kmod-block2mtd is not set
 # CONFIG_PACKAGE_kmod-dm is not set
 # CONFIG_PACKAGE_kmod-ide-core is not set
+# CONFIG_PACKAGE_kmod-libsas is not set
 CONFIG_PACKAGE_kmod-loop=m
 # CONFIG_PACKAGE_kmod-md-mod is not set
 # CONFIG_PACKAGE_kmod-nbd is not set
@@ -2374,7 +2395,17 @@ CONFIG_PACKAGE_kmod-nfnetlink-queue=m
 #
 # Network Devices
 #
+# CONFIG_PACKAGE_kmod-3c59x is not set
+# CONFIG_PACKAGE_kmod-8139cp is not set
+# CONFIG_PACKAGE_kmod-8139too is not set
+# CONFIG_PACKAGE_kmod-atl1 is not set
+# CONFIG_PACKAGE_kmod-atl1c is not set
+# CONFIG_PACKAGE_kmod-atl1e is not set
+# CONFIG_PACKAGE_kmod-atl2 is not set
+# CONFIG_PACKAGE_kmod-b44 is not set
+# CONFIG_PACKAGE_kmod-dm9000 is not set
 CONFIG_PACKAGE_kmod-dummy=m
+# CONFIG_PACKAGE_kmod-e100 is not set
 # CONFIG_PACKAGE_kmod-e1000 is not set
 # CONFIG_PACKAGE_kmod-et131x is not set
 # CONFIG_PACKAGE_kmod-gigaset is not set
@@ -2383,14 +2414,26 @@ CONFIG_PACKAGE_kmod-dummy=m
 CONFIG_PACKAGE_kmod-ifb=y
 CONFIG_PACKAGE_kmod-libphy=m
 CONFIG_PACKAGE_kmod-macvlan=m
+# CONFIG_PACKAGE_kmod-natsemi is not set
+# CONFIG_PACKAGE_kmod-ne2k-pci is not set
+# CONFIG_PACKAGE_kmod-pcnet32 is not set
+# CONFIG_PACKAGE_kmod-r6040 is not set
 # CONFIG_PACKAGE_kmod-r8169 is not set
 CONFIG_PACKAGE_kmod-siit=m
+# CONFIG_PACKAGE_kmod-sis190 is not set
+# CONFIG_PACKAGE_kmod-sis900 is not set
+# CONFIG_PACKAGE_kmod-skge is not set
+# CONFIG_PACKAGE_kmod-sky2 is not set
+# CONFIG_PACKAGE_kmod-solos-pci is not set
 CONFIG_PACKAGE_kmod-swconfig=m
 # CONFIG_PACKAGE_kmod-switch-ip17xx is not set
 # CONFIG_PACKAGE_kmod-switch-rtl8366-smi is not set
 # CONFIG_PACKAGE_kmod-switch-rtl8366rb is not set
 # CONFIG_PACKAGE_kmod-switch-rtl8366s is not set
 # CONFIG_PACKAGE_kmod-tg3 is not set
+# CONFIG_PACKAGE_kmod-tulip is not set
+# CONFIG_PACKAGE_kmod-via-rhine is not set
+# CONFIG_PACKAGE_kmod-via-velocity is not set
 
 #
 # Network Support
@@ -2451,6 +2494,7 @@ CONFIG_PACKAGE_kmod-button-hotplug=y
 # CONFIG_PACKAGE_kmod-eeprom-at25 is not set
 CONFIG_PACKAGE_kmod-gpio-button-hotplug=y
 # CONFIG_PACKAGE_kmod-gpio-dev is not set
+# CONFIG_PACKAGE_kmod-gpio-nxp-74hc164 is not set
 # CONFIG_PACKAGE_kmod-hid is not set
 CONFIG_PACKAGE_kmod-input-core=y
 # CONFIG_PACKAGE_kmod-input-evdev is not set
@@ -2468,7 +2512,7 @@ CONFIG_PACKAGE_kmod-input-polldev=y
 CONFIG_PACKAGE_kmod-oprofile=m
 # CONFIG_PACKAGE_kmod-pwm is not set
 # CONFIG_PACKAGE_kmod-pwm-gpio is not set
-# CONFIG_PACKAGE_kmod-pwm-gpio-custom is not set
+# CONFIG_PACKAGE_kmod-regmap is not set
 # CONFIG_PACKAGE_kmod-rfkill is not set
 # CONFIG_PACKAGE_kmod-rotary-gpio-custom is not set
 # CONFIG_PACKAGE_kmod-serial-8250 is not set
@@ -2500,6 +2544,8 @@ CONFIG_PACKAGE_kmod-wdt-ath79=y
 CONFIG_PACKAGE_kmod-sound-core=m
 # CONFIG_PACKAGE_kmod-sound-cs5535audio is not set
 # CONFIG_PACKAGE_kmod-sound-i8x0 is not set
+# CONFIG_PACKAGE_kmod-sound-seq is not set
+# CONFIG_PACKAGE_kmod-sound-soc-ac97 is not set
 # CONFIG_PACKAGE_kmod-sound-soc-core is not set
 # CONFIG_PACKAGE_kmod-usb-audio is not set
 
@@ -2793,6 +2839,7 @@ CONFIG_PACKAGE_mountd=m
 # CONFIG_PACKAGE_ocf-crypto-headers is not set
 # CONFIG_PACKAGE_openldap-utils is not set
 CONFIG_PACKAGE_openssl-util=m
+# CONFIG_PACKAGE_owipcalc is not set
 CONFIG_PACKAGE_procps=m
 # CONFIG_PACKAGE_psmisc is not set
 CONFIG_PACKAGE_px5g=y
