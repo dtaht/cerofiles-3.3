@@ -9,13 +9,13 @@ config dnsmasq
 	option local	'/home.lan/'
 	option domain	'home.lan'
 	option expandhosts	1
-	option port 0
+	option port 53
 	option nonegcache	0
 	option authoritative	1
 	option readethers	1
 	option leasefile	'/tmp/dhcp.leases'
 	option resolvfile	'/tmp/resolv.conf.auto'
-	option cachesize 	150
+	option cachesize 	5000
 	option dhcpscript 	'/etc/dnsmasq_net6.sh'
 	#list server		'/mycompany.local/1.2.3.4'
 	#option nonwildcard	1
