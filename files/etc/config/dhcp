@@ -90,3 +90,12 @@ config 'dhcp' 'gw11'
 	option interface	'gw11'
 	option ignore	1
 
+config domain
+	option name 'gw.home.lan'  
+	option ip '172.30.42.1'     
+                                   
+config domain               
+	option name 'wpad.home.lan'
+	option ip '172.30.42.1'
+  
+
