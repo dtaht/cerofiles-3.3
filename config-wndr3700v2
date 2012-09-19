@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
-# OpenWrt version: Attitude Adjustment (r33287)
-# Mon Aug 27 11:01:53 2012
+# OpenWrt version: Attitude Adjustment (r33460)
+# Tue Sep 18 19:11:28 2012
 #
 CONFIG_HAVE_DOT_CONFIG=y
 # CONFIG_TARGET_ppc40x is not set
@@ -114,6 +114,9 @@ CONFIG_TARGET_ar71xx_generic=y
 # CONFIG_TARGET_ar71xx_generic_ALFAAP96 is not set
 # CONFIG_TARGET_ar71xx_generic_HORNETUB is not set
 # CONFIG_TARGET_ar71xx_generic_ALFANX is not set
+# CONFIG_TARGET_ar71xx_generic_ALL0305 is not set
+# CONFIG_TARGET_ar71xx_generic_ALL0258N is not set
+# CONFIG_TARGET_ar71xx_generic_ALL0315N is not set
 # CONFIG_TARGET_ar71xx_generic_AP113 is not set
 # CONFIG_TARGET_ar71xx_generic_AP121 is not set
 # CONFIG_TARGET_ar71xx_generic_AP121MINI is not set
@@ -133,13 +136,17 @@ CONFIG_TARGET_ar71xx_generic=y
 # CONFIG_TARGET_ar71xx_generic_WHRG301N is not set
 # CONFIG_TARGET_ar71xx_generic_WHRHPG300N is not set
 # CONFIG_TARGET_ar71xx_generic_WHRHPGN is not set
+# CONFIG_TARGET_ar71xx_generic_WLAEAG300N is not set
 # CONFIG_TARGET_ar71xx_generic_WP543 is not set
 # CONFIG_TARGET_ar71xx_generic_WPE72 is not set
 # CONFIG_TARGET_ar71xx_generic_DIR600A1 is not set
 # CONFIG_TARGET_ar71xx_generic_DIR601A1 is not set
 # CONFIG_TARGET_ar71xx_generic_DIR615C1 is not set
 # CONFIG_TARGET_ar71xx_generic_DIR615E4 is not set
+# CONFIG_TARGET_ar71xx_generic_DIR825B1_ALL is not set
 # CONFIG_TARGET_ar71xx_generic_DIR825B1 is not set
+# CONFIG_TARGET_ar71xx_generic_DIR825B1_OPENWRT is not set
+# CONFIG_TARGET_ar71xx_generic_DIR825B1_TOSTOCK is not set
 # CONFIG_TARGET_ar71xx_generic_EWDORIN is not set
 # CONFIG_TARGET_ar71xx_generic_JA76PF is not set
 # CONFIG_TARGET_ar71xx_generic_JA76PF2 is not set
@@ -172,6 +179,7 @@ CONFIG_TARGET_ar71xx_generic_WNDR3700=y
 # CONFIG_TARGET_ar71xx_generic_TEW632BRP is not set
 # CONFIG_TARGET_ar71xx_generic_TEW652BRP is not set
 # CONFIG_TARGET_ar71xx_generic_TEW673GRU is not set
+# CONFIG_TARGET_ar71xx_generic_TEW712BR is not set
 # CONFIG_TARGET_ar71xx_generic_UBNTRS is not set
 # CONFIG_TARGET_ar71xx_generic_UBNTRSPRO is not set
 # CONFIG_TARGET_ar71xx_generic_UBNTUNIFI is not set
@@ -213,7 +221,8 @@ CONFIG_TARGET_ar71xx_generic_WNDR3700=y
 # CONFIG_TARGET_atheros_Default is not set
 # CONFIG_TARGET_coldfire_Default is not set
 # CONFIG_TARGET_cobalt_Default is not set
-# CONFIG_TARGET_mcs814x_Default is not set
+# CONFIG_TARGET_mcs814x_Generic is not set
+# CONFIG_TARGET_mcs814x_dLAN_USB_Extender is not set
 # CONFIG_TARGET_malta_le_Default is not set
 # CONFIG_TARGET_malta_be_Default is not set
 # CONFIG_TARGET_uml_Default is not set
@@ -266,6 +275,9 @@ CONFIG_TARGET_ar71xx_generic_WNDR3700=y
 # CONFIG_TARGET_ramips_rt288x_RTN15 is not set
 # CONFIG_TARGET_ramips_rt288x_F5D8235V1 is not set
 # CONFIG_TARGET_ramips_rt305x_Default is not set
+# CONFIG_TARGET_ramips_rt305x_ALL02393G is not set
+# CONFIG_TARGET_ramips_rt305x_ALL0256N is not set
+# CONFIG_TARGET_ramips_rt305x_ALL5002 is not set
 # CONFIG_TARGET_ramips_rt305x_HW5503G is not set
 # CONFIG_TARGET_ramips_rt305x_F5D8235V2 is not set
 # CONFIG_TARGET_ramips_rt305x_ESR9753 is not set
@@ -465,7 +477,7 @@ CONFIG_KERNEL_PRINTK_TIME=y
 # CONFIG_DEBUG is not set
 CONFIG_IPV6=y
 CONFIG_PKG_BUILD_PARALLEL=y
-CONFIG_PKG_BUILD_JOBS=8
+CONFIG_PKG_BUILD_USE_JOBSERVER=y
 
 #
 # Stripping options
@@ -548,7 +560,11 @@ CONFIG_TARGET_INIT_PATH="/bin:/sbin:/usr/bin:/usr/sbin"
 CONFIG_TARGET_INIT_ENV=""
 CONFIG_TARGET_INIT_CMD="/sbin/init"
 CONFIG_TARGET_INIT_SUPPRESS_STDERR=y
-# CONFIG_VERSIONOPT is not set
+CONFIG_VERSIONOPT=y
+CONFIG_VERSION_DIST="CeroWrt"
+CONFIG_VERSION_NICK="Sugarland"
+CONFIG_VERSION_NUMBER=""
+CONFIG_VERSION_REPO="http://huchra.bufferbloat.net/~cero1/3.3/3.3.8-26/packages"
 
 #
 # Base system
@@ -1363,7 +1379,8 @@ CONFIG_PACKAGE_mtd=y
 CONFIG_PACKAGE_netifd=y
 # CONFIG_PACKAGE_nvram is not set
 # CONFIG_PACKAGE_om-watchdog is not set
-CONFIG_PACKAGE_opkg=y
+# CONFIG_PACKAGE_opkg is not set
+CONFIG_PACKAGE_opkg-gpg=y
 CONFIG_PACKAGE_qos-scripts=y
 CONFIG_PACKAGE_resolveip=m
 CONFIG_PACKAGE_swconfig=y
@@ -1790,6 +1807,7 @@ CONFIG_PACKAGE_httping=y
 # CONFIG_PACKAGE_in-mvp is not set
 CONFIG_PACKAGE_iperf=m
 CONFIG_PACKAGE_iperf-mt=y
+CONFIG_PACKAGE_ipset=y
 CONFIG_PACKAGE_iw=y
 CONFIG_PACKAGE_krb5-client=m
 CONFIG_PACKAGE_krb5-libs=m
@@ -1927,6 +1945,7 @@ CONFIG_PACKAGE_fcgi=m
 # CONFIG_PACKAGE_glib2 is not set
 CONFIG_PACKAGE_jansson=m
 CONFIG_PACKAGE_libart=m
+CONFIG_PACKAGE_libassuan=y
 CONFIG_PACKAGE_libavahi=y
 CONFIG_PACKAGE_libavahi-client=m
 CONFIG_PACKAGE_libavahi-dbus-support=y
@@ -1963,6 +1982,7 @@ CONFIG_PACKAGE_libgd=m
 CONFIG_PACKAGE_libgdbm=y
 CONFIG_PACKAGE_libgmp=y
 CONFIG_PACKAGE_libgpg-error=y
+CONFIG_PACKAGE_libgpgme=y
 CONFIG_PACKAGE_libgps=m
 CONFIG_PACKAGE_libgpsd=m
 CONFIG_PACKAGE_libhowl=m
@@ -1981,6 +2001,7 @@ CONFIG_PACKAGE_liblua=y
 CONFIG_PACKAGE_liblzo=y
 CONFIG_PACKAGE_libmad=m
 CONFIG_PACKAGE_libminiupnpc=m
+CONFIG_PACKAGE_libmnl=y
 # CONFIG_PACKAGE_libmodbus is not set
 CONFIG_PACKAGE_libmount=y
 CONFIG_PACKAGE_libmysqlclient=m
@@ -2058,6 +2079,7 @@ CONFIG_PACKAGE_6in4=y
 CONFIG_PACKAGE_6rd=y
 CONFIG_PACKAGE_6to4=y
 CONFIG_PACKAGE_ahcpd=y
+CONFIG_PACKAGE_aiccu=m
 CONFIG_PACKAGE_bird6=m
 CONFIG_PACKAGE_birdc6=m
 CONFIG_PACKAGE_dhcp6-client=m
@@ -2102,6 +2124,7 @@ CONFIG_PACKAGE_luci-app-ddns=y
 # CONFIG_PACKAGE_luci-app-diag-devinfo is not set
 CONFIG_PACKAGE_luci-app-firewall=y
 CONFIG_PACKAGE_luci-app-freifunk-policyrouting=m
+# CONFIG_PACKAGE_luci-app-freifunk-widgets is not set
 CONFIG_PACKAGE_luci-app-hd-idle=m
 # CONFIG_PACKAGE_luci-app-ltqtapi is not set
 # CONFIG_PACKAGE_luci-app-meshwizard is not set
@@ -2111,7 +2134,6 @@ CONFIG_PACKAGE_luci-app-ntpc=y
 CONFIG_PACKAGE_luci-app-olsr=m
 # CONFIG_PACKAGE_luci-app-olsr-services is not set
 # CONFIG_PACKAGE_luci-app-olsr-viz is not set
-CONFIG_PACKAGE_luci-app-openvpn=y
 # CONFIG_PACKAGE_luci-app-p2pblock is not set
 CONFIG_PACKAGE_luci-app-p910nd=m
 # CONFIG_PACKAGE_luci-app-pbx is not set
@@ -2387,6 +2409,7 @@ CONFIG_PACKAGE_kmod-ipt-ipopt=y
 # CONFIG_PACKAGE_kmod-ipt-ipp2p is not set
 CONFIG_PACKAGE_kmod-ipt-iprange=m
 CONFIG_PACKAGE_kmod-ipt-ipsec=y
+CONFIG_PACKAGE_kmod-ipt-ipset=y
 # CONFIG_PACKAGE_kmod-ipt-ipv4options is not set
 # CONFIG_PACKAGE_kmod-ipt-led is not set
 # CONFIG_PACKAGE_kmod-ipt-length2 is not set
@@ -2411,7 +2434,7 @@ CONFIG_PACKAGE_kmod-ipt-tproxy=m
 CONFIG_PACKAGE_kmod-ipt-u32=m
 CONFIG_PACKAGE_kmod-ipt-ulog=m
 CONFIG_PACKAGE_kmod-nf-conntrack-netlink=m
-CONFIG_PACKAGE_kmod-nfnetlink=m
+CONFIG_PACKAGE_kmod-nfnetlink=y
 CONFIG_PACKAGE_kmod-nfnetlink-log=m
 CONFIG_PACKAGE_kmod-nfnetlink-queue=m
 
@@ -2531,6 +2554,7 @@ CONFIG_PACKAGE_kmod-input-polldev=y
 # CONFIG_PACKAGE_kmod-mmc-over-gpio is not set
 # CONFIG_PACKAGE_kmod-mtdtests is not set
 # CONFIG_PACKAGE_kmod-nand is not set
+# CONFIG_PACKAGE_kmod-nand-ar934x is not set
 # CONFIG_PACKAGE_kmod-nandsim is not set
 CONFIG_PACKAGE_kmod-oprofile=m
 # CONFIG_PACKAGE_kmod-pwm is not set
